@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/OceanPlatform.png-cb5b103031f2768330657f477abcc307.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

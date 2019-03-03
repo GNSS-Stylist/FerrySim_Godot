@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/noise_tileable.png-86c7bbd88c367ea4bfd90b5cc356d90b.s3tc.stex"
 path.etc2="res://.import/noise_tileable.png-86c7bbd88c367ea4bfd90b5cc356d90b.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 

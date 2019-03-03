@@ -1,4 +1,4 @@
-extends HydroRigidBody
+extends WaterArea
 
 onready var ocean = $"../Ocean"
 
