@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 10.0
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.337255, 1, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_color = Color( 0.992157, 1, 0, 0.266667 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 5, 10, 18 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0, 0.498039 )
+
+[sub_resource type="CylinderMesh" id=6]
+material = SubResource( 5 )
+top_radius = 0.2
+bottom_radius = 0.2
+height = 10.0
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0, 0.0862745, 1, 0.501961 )
+
+[node name="Target" type="Spatial"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 21.553 )
+
+[node name="CenterPole" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.72394, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Box" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86933, 0 )
+visible = false
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="FrontLeft" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 9 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="FrontRight" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 9 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="BackLeft" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -9 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="BackRight" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -9 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="TargetOrthoCamera" type="Camera" parent="."]
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 0, -1.62921e-07, 1, -1, 1.62921e-07, 2.65431e-14, 0, 15, 0 )
+projection = 1
+size = 15.0

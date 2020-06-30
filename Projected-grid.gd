@@ -5,12 +5,12 @@ const NUMBER_OF_WAVES = 10;
 
 export(float, 0, 10000) var wavelength = 60.0 setget set_wavelength
 export(float, 0, 1) var steepness = 0.01 setget set_steepness
-export(float, 0, 10000) var amplitude = 0.1 setget set_amplitude
+export(float, 0, 10000) var amplitude = 0 setget set_amplitude
 export(Vector2) var wind_direction = Vector2(1, 0) setget set_wind_direction
 export(float, 0, 1) var wind_align = 0.0 setget set_wind_align
 export(float) var speed = 10.0 setget set_speed
 
-export(bool) var noise_enabled = true setget set_noise_enabled
+export(bool) var noise_enabled = false setget set_noise_enabled
 export(float) var noise_amplitude = 0.28 setget set_noise_amplitude
 export(float) var noise_frequency = 0.065 setget set_noise_frequency
 export(float) var noise_speed = 0.48 setget set_noise_speed
