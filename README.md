@@ -1,3 +1,11 @@
+# FerrySim_Godot
+
+Godot-project for simulating a ferry and to ease prototyping/testing of a location/orientation solver utilizing "simulated" GNSS-receivers. Location/orientation solver (and a simple autopilot) is implemented in this "controller": https://github.com/GNSS-Stylist/SimFerryController (coded with Qt/C++). Communication between the controller and this simulator is done with a very simple UDP-based protocol.
+
+Note that this needs a special compilation of Godot to work (compiled with a slightly modified hydrodynamics module and a few tweaks to Godot itself). You can download the sources from https://github.com/GNSS-Stylist/godot/tree/FerrySim_V100 and a win32-executable from https://github.com/GNSS-Stylist/godot/releases/download/FerrySim_V100/godot.windows.tools.32.exe
+
+This is heavily based (in addition to Godot's functionality) on these (thanks a lot for sharing!):
+
 # HydroSimpleDemo
 
 Simple Godot 3.1+ project to demonstrate the HydroRigidBody node from https://gitlab.com/ringtechsolutions/godot-tools/hydro/hydro
@@ -57,7 +65,27 @@ When running the project(sorry if it's slow to load. I'm looking into that.) You
 
 -**D key** go right.
 
--**Q key** toggle between fly and edit mode. You cant play with the ocean parameters and fly at the same time.
+-**CTRL key** toggle between fly and edit mode. You cant play with the ocean parameters and fly at the same time.
+
+-**Q key** go down.
+
+-**E key** go up.
+
+-**R key** randomize new GNSS-antenna positions.
+
+-**T key** Increase fly speed.
+
+-**G key** Decrease fly speed.
+
+-**C key** Move GNSS-antennas to the corners of the ferry.
+
+-**B key** Spawn a new 1 m3 buoyant **b**ox (cube).
+
+-**Left mouse button** activate stick-type manipulator.
+
+-**Right mouse button** activate plate-type manipulator.
+
+-**Number keys** Change camera.
 
 # Credits
 
