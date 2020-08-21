@@ -284,12 +284,15 @@ value = 1000.0
 
 [node name="AntennaRig1" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.5, 8 )
+poleColor = Color( 1, 0, 0, 1 )
 
 [node name="AntennaRig2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 1.5, 8 )
+poleColor = Color( 0, 1, 0, 1 )
 
 [node name="AntennaRig3" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.5, 6 )
+poleColor = Color( 0, 0, 1, 1 )
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.486062, 0 )
