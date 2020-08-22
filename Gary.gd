@@ -144,6 +144,9 @@ func camSwitch():
 	if Input.is_action_pressed("camera_8"):
 		var camera = get_node("../LookAtDestinationCameraRig/LookAtDestinationCamera")
 		camera.current = true
+	if Input.is_action_pressed("camera_9"):
+		var camera = get_node("../Ferry/AntennaLoopOrthoCamera")
+		camera.current = true
 	
 func aim():
 	if camera_change.length() > 0:
