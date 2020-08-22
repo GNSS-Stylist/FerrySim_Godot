@@ -15,6 +15,7 @@ var clientPeer:PacketPeerUDP
 var autopilotCommandTimeout = 5/8 as float
 var timeAfterAutopilotCommand = 1e9 as float
 var autopilotActive = false
+var antennaRotationCounter = 0
 #var peer
 
 # Called when the node enters the scene tree for the first time.
@@ -37,7 +38,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	handleKeyPresses()
+	handleKeyPresses(delta)
 	if (clientPeer != null) && (serverPeer != null):
 		timeAfterAutopilotCommand += delta
 		timeAfterPositionUpdate += delta
@@ -197,7 +198,7 @@ func coordsNEDToEUS(coords):
 	var ned = coords as Vector3
 	return Vector3(ned[1], -ned[2], -ned[0])
 	
-func handleKeyPresses():
+func handleKeyPresses(delta):
 	if Input.is_action_just_pressed("randomize_antenna_positions"):
 		randomize()
 		var antenna1 = get_node("../Ferry/AntennaRig1")
@@ -206,9 +207,9 @@ func handleKeyPresses():
 		
 		var randXMin = 1
 		var randXMax = 2.4
-		var randYMin = 0.5
-		var randYMax = 2.5
-		var randZMin = 7
+		var randYMin = 1
+		var randYMax = 5
+		var randZMin = 5
 		var randZMax = 9
 
 		antenna1.transform.origin = Vector3(rand_range(randXMin, randXMax), rand_range(randYMin, randYMax), rand_range(randZMin, randZMax))
@@ -216,7 +217,6 @@ func handleKeyPresses():
 		antenna3.transform.origin = Vector3(rand_range(randXMin, randXMax), rand_range(randYMin, randYMax), rand_range(randZMin, randZMax))
 
 	if Input.is_action_just_pressed("corner_antenna_positions"):
-		# see comment above (randomize_antenna_positions)
 		var antenna1 = get_node("../Ferry/AntennaRig1")
 		var antenna2 = get_node("../Ferry/AntennaRig2")
 		var antenna3 = get_node("../Ferry/AntennaRig3")
@@ -225,3 +225,36 @@ func handleKeyPresses():
 		antenna2.transform.origin = Vector3(2.3, 1.5, 8)
 		antenna3.transform.origin = Vector3(-2.3, 1.5, -8)
 
+	if Input.is_action_pressed("loop_antennas_120_degrees_apart"):
+		var antenna1 = get_node("../Ferry/AntennaRig1")
+		var antenna2 = get_node("../Ferry/AntennaRig2")
+		var antenna3 = get_node("../Ferry/AntennaRig3")
+		
+		antennaRotationCounter += delta
+		
+		var ant1Rotation = antennaRotationCounter
+		var ant2Rotation = antennaRotationCounter + 2.0 * PI / 3.0 
+		var ant3Rotation = antennaRotationCounter + 4.0 * PI / 3.0
+		var radius = 1
+		var rotationCenter = Vector3(0, 1.5, 7)
+		
+		antenna1.transform.origin = Vector3(sin(ant1Rotation) * radius, 0, cos(ant1Rotation) * radius) + rotationCenter
+		antenna2.transform.origin = Vector3(sin(ant2Rotation) * radius, 0, cos(ant2Rotation) * radius) + rotationCenter
+		antenna3.transform.origin = Vector3(sin(ant3Rotation) * radius, 0, cos(ant3Rotation) * radius) + rotationCenter
+
+	if Input.is_action_pressed("loop_antennas_wildly"):
+		var antenna1 = get_node("../Ferry/AntennaRig1")
+		var antenna2 = get_node("../Ferry/AntennaRig2")
+		var antenna3 = get_node("../Ferry/AntennaRig3")
+		
+		antennaRotationCounter += delta
+		
+		var ant1Rotation = antennaRotationCounter
+		var ant2Rotation = antennaRotationCounter * 0.9 + 2.0 * PI / 3.0 
+		var ant3Rotation = antennaRotationCounter * 1.2 + 4.0 * PI / 3.0
+		var radius = 1
+		var rotationCenter = Vector3(0, 1.5, 7)
+		
+		antenna1.transform.origin = Vector3(sin(ant1Rotation) * radius, 0, cos(ant1Rotation) * radius) + rotationCenter
+		antenna2.transform.origin = Vector3(sin(ant2Rotation) * radius, 0, cos(ant2Rotation) * radius) + rotationCenter
+		antenna3.transform.origin = Vector3(sin(ant3Rotation) * radius, 0, cos(ant3Rotation) * radius) + rotationCenter
