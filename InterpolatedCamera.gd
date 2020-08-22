@@ -12,12 +12,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var targetObject = get_node("../Ferry")
 	var targetLookAtPos = targetObject.translation
 	var verticalOffset = Vector3(0,-10, 0)
 	targetLookAtPos += verticalOffset
-	var east = Vector3(1,0,0)
+#	var east = Vector3(1,0,0)
 #	var up = Vector3(0,1,0).rotated(east, 0.1)
 	var up = Vector3(0,1,0)
 	look_at(targetLookAtPos, up)

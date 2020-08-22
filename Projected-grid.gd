@@ -36,12 +36,12 @@ func _ready():
 		for i in range(res):
 			var x = i/res - 0.5
 			
-			var new_x = x 
-			var new_y = y
+#			var new_x = x 
+#			var new_y = y
 			
 			add_vertex(Vector3(x*2, 0, -y*2))
 			
-			new_y = n_y - translation.z
+#			new_y = n_y - translation.z
 			add_vertex(Vector3(x*2, 0, -n_y*2))
 		end()
 	begin(Mesh.PRIMITIVE_POINTS)
@@ -158,7 +158,7 @@ func update_waves():
 	seed(seed_value)
 	var amp_length_ratio = amplitude / wavelength
 	waves.clear()
-	for i in range(NUMBER_OF_WAVES):
+	for _i in range(NUMBER_OF_WAVES):
 		var _wavelength = rand_range(wavelength/2.0, wavelength*2.0)
 		var _wind_direction = wind_direction.rotated(rand_range(-PI, PI)*(1-wind_align))
 		

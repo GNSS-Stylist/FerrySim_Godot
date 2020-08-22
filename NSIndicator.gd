@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var ferry = get_node("../Ferry")
 	var newTranslation = ferry.global_transform.origin
 	newTranslation[1] = transform.origin[1]

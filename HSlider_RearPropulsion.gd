@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var prop = get_node("../../Ferry/WatercraftPropulsion_Rear") as WatercraftPropulsion
 	var indicator = get_node("../../Ferry/NonBuoyantMeshes/PropIndicator_Rear") as MeshInstance
 	var propulsion = self.value

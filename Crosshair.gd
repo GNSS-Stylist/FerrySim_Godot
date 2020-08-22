@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var camera = get_node("../Head/FirstPersonCamera")
 	if camera.current:
 		var center = get_viewport_rect().size

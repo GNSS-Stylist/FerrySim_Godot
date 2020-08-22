@@ -118,7 +118,7 @@ func fly(delta):
 	velocity = velocity.linear_interpolate(target, FLY_ACCEL * delta)
 	
 	# move
-	move_and_slide(velocity * velocityMultiplier)
+	var _discard = move_and_slide(velocity * velocityMultiplier)
 	
 func camSwitch():
 	if Input.is_action_pressed("camera_1"):

@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var fp = get_node("../../FirstPerson")
 	var speed = fp.velocityMultiplier * 100.0
 	self.text = """Flying speed: %.0f""" % [speed]

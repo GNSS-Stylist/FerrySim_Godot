@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var antenna1 = get_node("../../Ferry/AntennaRig1/Antenna")	# How to do this:	as AntennaRig
 	var antenna2 = get_node("../../Ferry/AntennaRig2/Antenna")	# How to do this:	as AntennaRig
 	var antenna3 = get_node("../../Ferry/AntennaRig3/Antenna")	# How to do this:	as AntennaRig
