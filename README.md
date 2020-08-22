@@ -81,6 +81,10 @@ When running the project(sorry if it's slow to load. I'm looking into that.) You
 
 -**B key** Spawn a new 1 m3 buoyant **b**ox (cube).
 
+-**L key** Rotate antennas in a round ("**L**oop") on the front deck of the ferry in "120 degree separation".
+
+-**K key** Rotate antennas in a round on the front deck of the ferry in varying separation.
+
 -**Left mouse button** activate stick-type manipulator.
 
 -**Right mouse button** activate plate-type manipulator.
