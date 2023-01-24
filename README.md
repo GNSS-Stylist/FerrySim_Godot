@@ -2,7 +2,7 @@
 
 Godot-project for simulating a ferry and to ease prototyping/testing of a location/orientation solver utilizing "simulated" GNSS-receivers. Location/orientation solver (and a simple autopilot) is implemented in this "controller": https://github.com/GNSS-Stylist/SimFerryController (coded with Qt/C++). Communication between the controller and this simulator is done with a very simple UDP-based protocol.
 
-Note that this needs a special compilation of Godot to work (compiled with a slightly modified hydrodynamics module and a few tweaks to Godot itself). You can download the sources from https://github.com/GNSS-Stylist/godot/tree/FerrySim_V100 and a win32-executable from https://github.com/GNSS-Stylist/godot/releases/download/FerrySim_V100/godot.windows.tools.32.exe
+Note that this needs a special compilation of Godot to work (compiled with a slightly modified hydrodynamics module and a few tweaks to Godot itself). You can download the sources from https://github.com/GNSS-Stylist/godot_old/tree/FerrySim_V100 and a win32-executable from https://github.com/GNSS-Stylist/godot_old/releases/download/FerrySim_V100/godot.windows.tools.32.exe
 
 This is heavily based (in addition to Godot's functionality) on these (thanks a lot for sharing!):
 
